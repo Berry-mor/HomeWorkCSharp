@@ -70,8 +70,6 @@ int getCharLength(int number)
 int getCharByPosition(int number, int position)
 {
     int numberLength      = getCharLength(number);
-  Console.WriteLine($"NumberLength : {numberLength}");
-    Console.WriteLine($"Position : {position}");
     int positionFromRight = numberLength - position - 1;
 
     int devider = 1;
@@ -105,8 +103,6 @@ bool isPalindrome(int number)
     {
         int left  = getCharByPosition(number, i);
         int right = getCharByPosition(number, length - i - 1);
-Console.WriteLine($"Left : {left}");
-Console.WriteLine($"Right : {right}");
         if (left != right)
         {
             return false;
