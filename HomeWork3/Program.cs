@@ -2,14 +2,10 @@
 // Напишите программу, которая принимает
 // на вход  число и проверяет, является ли оно палиндромом.
 /*
-Console.WriteLine("Введите число:");
-int num = Convert.ToInt32(Console.ReadLine());
-//KolNum(num);
-int sum = KolNumOne(num);
-Itog(sum, num);
+
 void Itog(int sum, int number)
 {
- Console.WriteLine(sum);
+ //Console.WriteLine(sum);
  int ii = 10; 
   int count = sum % 10;
   int i = (sum - count) / ii;
@@ -19,24 +15,19 @@ void Itog(int sum, int number)
   {
    numLev = number / i ;
    numPr = number % 10 ;
-  Console.WriteLine($"Number {number},NumLev {numLev}, NumPr {numPr}");
+ // Console.WriteLine($"Number {number},NumLev {numLev}, NumPr {numPr}");
   number = (number % i) / 10;
-  Console.WriteLine($"Number {number}");
+  //Console.WriteLine($"Number {number}");
       if(number  > 9 && number < 100 )
           {
              numLev = number / i;
              numPr =  number % 10;
-             Console.WriteLine($"Number if {number},NumLev {numLev}, NumPr {numPr}");
+             //Console.WriteLine($"Number if {number},NumLev {numLev}, NumPr {numPr}");
              if (numLev == numPr)
                 {
                   Console.WriteLine($"ДА!!!");
                   break;
                 }
-          }
-      else
-         {
-            ii = ii * 10;
-            i = i / ii;
          }
   ii = ii * 10;
   i = i / ii;
@@ -65,17 +56,17 @@ void Itog(int sum, int number)
         
 }
 
-void KolNum(int number)
-{
-   
-     if(number < 10) Console.WriteLine("Число однозначное");   
-}
- */
+Console.WriteLine("Введите число:");
+int num = Convert.ToInt32(Console.ReadLine());
+int sum = KolNumOne(num);
+Itog(sum, num);
+*/
+ 
 
 //Задача № 21
 //Напишите программу, которая принимает на вход координаты двух
 // точек и находит расстояние между ними в 3D пространстве.
-
+/*
 Console.WriteLine("Введите x1:");
 int x1 = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите y1:");
@@ -89,9 +80,9 @@ int y2 = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите z2:");
 int z2 = Convert.ToInt32(Console.ReadLine());
 
- distance(x1, y1, z1,
+ dist(x1, y1, z1,
              x2, y2, z2);
-void distance(float x1, float y1,
+void dist(float x1, float y1,
               float z1, float x2,
               float y2, float z2)
 {
@@ -102,3 +93,104 @@ void distance(float x1, float y1,
     Console.WriteLine(Math.Round(d,2));
     return;
 }
+*/
+
+//Задача №23
+//Напишите программу, которая принимает
+// на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+
+Console.WriteLine("Введите число:");
+int number = Convert.ToInt32(Console.ReadLine());
+
+CubNum(number);
+void CubNum(int number)
+{
+  for(int a = 1; a <= number; a++)
+  {
+    Console.Write($"{a * a * a},");
+  }
+}
+
+
+/*
+//Второй вариант задачи 19
+
+int getCharLength(int number)
+{
+    int currentNumber = number;
+    int length        = 1;
+
+    while (currentNumber > 9)
+    {
+        length++;
+        currentNumber /= 10;
+    }
+
+    return length;
+}
+
+int getCharByPosition(int number, int position)
+{
+    int numberLength      = getCharLength(number);
+  Console.WriteLine($"NumberLength : {numberLength}");
+    Console.WriteLine($"Position : {position}");
+    int positionFromRight = numberLength - position - 1;
+
+    int devider = 1;
+    for (int i = 0; i < positionFromRight; i++)
+    {
+        devider *= 10;
+    }
+
+    int result = number / devider % 10;
+    return result;
+}
+
+// Работает только с положительными значениями
+bool isPalindrome(int number)
+{
+    int length = getCharLength(number);
+
+    if (number <= 0)
+    {
+      Console.WriteLine("Ошибка: число должно быть положительным");
+        return false;
+    }
+
+    if (length <= 1)
+    {
+      Console.WriteLine("Ошибка: число должно быть длиннее");
+        return false;
+    }
+
+    for (int i = 0; i < length / 2; i++)
+    {
+        int left  = getCharByPosition(number, i);
+        int right = getCharByPosition(number, length - i - 1);
+Console.WriteLine($"Left : {left}");
+Console.WriteLine($"Right : {right}");
+        if (left != right)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+    Console.WriteLine("Введите любое целое положительное значение, чтобы проверить, является ли оно палиндромом:");
+
+    int number = -1;
+    number = Convert.ToInt32(Console.ReadLine());
+    bool result = isPalindrome(number);
+
+    if (result == true)
+    {
+          Console.WriteLine($"Это значение {number} полиндром!");
+    }
+    else
+    {
+          Console.WriteLine($"Это значение {number} не полиндром!");
+    }
+
+    return 0;
+*/
